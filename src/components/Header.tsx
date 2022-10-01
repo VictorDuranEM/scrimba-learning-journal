@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom'
 import logo from '../assets/images/logo.png'
 import styled from 'styled-components'
 
@@ -27,11 +28,11 @@ const Logo = styled.img`
 
 const BrandName = styled.p`
   font-family: var(--ff-brand);
+  text-decoration: none;
   font-size: var(--fs-14);
   font-weight: 700;
   color: #0E0E0E;
   margin-left: .5em;
-  margin-right: auto;
   
   @media (min-width: 650px) {
     font-size: var(--fs-20);
@@ -41,27 +42,50 @@ const BrandName = styled.p`
 const Nav = styled.div`
 `
 
-const NavItem = styled.a`
+const NavList = styled.ul`
+  list-style: none;
+  display: flex;
+`
+
+const NavItem = styled.li`
+`
+
+const NavLink = styled(Link)`
+  text-decoration: none;
   font-size: var(--fs-12);
   font-weight: 400;
   color: #090909;
   text-transform: uppercase;
-  text-decoration: none;
   margin-left: 2em;
   
   @media (min-width: 650px) {
     font-size: var(--fs-16);
   }
+  `
+  
+const BrandLink = styled(Link)`
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin-right: auto;
 `
 
 function Header() {
   return (
     <Container>
-      <Logo src={logo} alt="logo" />
-      <BrandName>My learning journal</BrandName>
-      <Nav> 
-        <NavItem href="/">home</NavItem>
-        <NavItem href="/home">about me</NavItem>
+      <BrandLink to="/">
+        <Logo src={logo} alt="logo" />
+        <BrandName>My learning journal</BrandName>
+      </BrandLink>
+      <Nav>
+        <NavList>
+          <NavItem>
+            <NavLink to='/'>home</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to='/about-me'>about me</NavLink>
+          </NavItem>
+        </NavList>
       </Nav>
     </Container>
   )
