@@ -13,7 +13,7 @@ const Container = styled.div `
 
 const Title = styled.p `
   font-weight: 700;
-  margin-bottom: .5em;
+  margin-bottom: .2em;
 `
 
 const Copyright = styled.p `
