@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom"
 import PostPreview from '../components/PostPreview'
 import PostSection from '../components/PostSection'
 import posts, { PostData } from '../assets/postsData'
+import PostPreviewGroup from '../components/PostPreviewGroup'
 
 const Container = styled.div `
   @media (min-width: 650px) {
@@ -42,13 +43,6 @@ const RecentPostsTitle = styled.p `
 `
 
 const RecentPosts = styled.div `
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(309px, 1fr));
-  justify-content: space-around;
-  justify-items: center;
-  align-items: start;
-  column-gap: 1.5rem;
-  row-gap: 2.5rem;
   margin-top: 2rem;
   padding: 0 1.5rem 3rem;
   
@@ -81,18 +75,7 @@ function Post() {
       </Body>
       <RecentPostsTitle>Recent posts</RecentPostsTitle>
       <RecentPosts>
-        {posts.filter(post => post.uuid != postLoaded.uuid)
-          .map(post => 
-            <PostPreview 
-              key={post.uuid}
-              uuid={post.uuid} 
-              small={true} 
-              closed={false} 
-              img={post.image} 
-              date={post.date} 
-              title={post.title} 
-              intro={post.intro} />
-          )}
+        <PostPreviewGroup posts={posts.filter(post => post.uuid != postLoaded.uuid)} />
       </RecentPosts>
     </Container>
   )

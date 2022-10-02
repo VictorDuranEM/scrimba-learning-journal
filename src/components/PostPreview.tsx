@@ -93,9 +93,6 @@ const TitleLink = styled(Link) <{ $small: boolean, $closed: boolean }> `
     
   ${props => (props.$small || props.$closed) && css`
     cursor: pointer;
-    :hover {
-      opacity: .5;
-    }
   `}
   
   ${props => !props.$small && !props.$closed && css`

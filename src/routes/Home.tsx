@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import postsData from '../assets/postsData'
 import PostPreview from "../components/PostPreview";
+import PostPreviewGroup from '../components/PostPreviewGroup';
 
 const Container = styled.div `
   padding-inline: 1.5rem;
@@ -24,12 +25,6 @@ const Container = styled.div `
 
 const Posts = styled.div `
   margin: 3rem 0 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(309px, 1fr));
-  justify-content: space-around;
-  justify-items: center;
-  column-gap: 1.5rem;
-  row-gap: 2.5rem;
 `
 
 const ViewMore = styled.button `
@@ -43,18 +38,6 @@ const ViewMore = styled.button `
   margin-bottom: 3em;
 `
 
-const posts = postsData.filter((_, index) => index != 0).map(post => {
-  return <PostPreview 
-            key={post.uuid}
-            uuid={post.uuid}
-            small={true} 
-            closed={false} 
-            img={post.image}
-            date={post.date}
-            title={post.title}
-            intro={post.intro} />
-})
-
 function Home() {
   return (
     <Container>
@@ -67,7 +50,7 @@ function Home() {
         title={postsData[0].title}
         intro={postsData[0].intro} />
       <Posts>
-        {posts}
+        <PostPreviewGroup posts={postsData.filter((_, index) => index != 0)} />
       </Posts>
       <ViewMore>View More</ViewMore>
     </Container>
