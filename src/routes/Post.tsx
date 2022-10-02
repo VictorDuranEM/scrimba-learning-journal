@@ -75,7 +75,7 @@ function Post() {
       </Body>
       <RecentPostsTitle>Recent posts</RecentPostsTitle>
       <RecentPosts>
-        <PostPreviewGroup posts={posts.filter(post => post.uuid != postLoaded.uuid)} />
+        <PostPreviewGroup posts={posts.filter(post => post.uuid != postLoaded.uuid).slice(0, 3)} />
       </RecentPosts>
     </Container>
   )

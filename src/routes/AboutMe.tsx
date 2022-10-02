@@ -5,10 +5,10 @@ import PostSection from "../components/PostSection"
 import PresentationCard from "../components/PresentationCard"
 
 const Container = styled.div `
-  padding: 2.5rem 1.3rem;
+  padding: 2.5rem 1.3rem 3.5rem;
   @media (min-width:650px) {
     background: #FAFAFA;
-    padding: 5rem 3rem;
+    padding: 5rem 3rem 3rem;
   }
 `
 
@@ -65,7 +65,7 @@ function AboutMe() {
       </Body>
       <RecentPostsTitle>Recent posts</RecentPostsTitle>
       <RecentPosts>
-        <PostPreviewGroup posts={posts} />
+        <PostPreviewGroup posts={posts.slice(0, 3)} />
       </RecentPosts>
     </Container>
   )
