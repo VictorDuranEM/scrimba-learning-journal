@@ -2,6 +2,13 @@
 
 Website created from a design provided in the [Scrimba's Frontend Career Path](https://scrimba.com/learn/frontend)
 
+## Run Locally
+
+```shell
+  npm install
+  npm run dev
+```
+
 ## Technologies Used
 
 * [ReactJS](https://reactjs.org/)
