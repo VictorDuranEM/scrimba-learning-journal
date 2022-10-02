@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import rokuPhoto from '../assets/images/roku.png'
+import rokuPhoto from '/images/roku.png'
 
 const Container = styled.div `
   color: #151515;

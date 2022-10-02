@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom'
-import logo from '../assets/images/logo.png'
+import logo from '/images/logo.png'
 import styled from 'styled-components'
 
 
